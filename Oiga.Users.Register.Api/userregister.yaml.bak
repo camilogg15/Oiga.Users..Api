@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oiga.users.gegister.apiapp
+  labels:
+    app: oiga.users.gegister.api
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: oiga.users.gegister.api
+  template:
+    metadata:
+      labels:
+        app: oiga.users.gegister.api
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "oiga.users.gegister.api"
+        dapr.io/app-port: "7001" 
+        prometheus.io/scrape: 'true'
+        prometheus.io/port:   '9090'
+    spec:
+      containers:
+      - name: oiga.users.gegister.api
+        image: localhost:32000/oiga.users.gegister.api:registry
+        ports:
+        - containerPort: 7001
+        imagePullPolicy: Always
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Development"
+    

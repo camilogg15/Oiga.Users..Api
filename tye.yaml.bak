@@ -1,0 +1,16 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: oiga.users.register.api
+extensions:
+- name: dapr
+services:
+- name: oiga-users-register-api
+  project: Oiga.Users.Register.Api/Oiga.Users.Register.Api.csproj
+- name: oiga-users-search-api
+  project: Oiga.Users.Search.Api/Oiga.Users.Search.Api.csproj
+- name: daprmicroservicetemplate1
+  project: aprMicroserviceTemplate1.csproj
