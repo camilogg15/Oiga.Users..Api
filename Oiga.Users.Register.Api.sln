@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oiga.Users.Register.Api", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oiga.Users.Search.Api", "Oiga.Users.Search.Api\Oiga.Users.Search.Api.csproj", "{379DCDAB-649F-4E8E-8DCE-A51F94D0EE4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprMicroserviceTemplate1", "..\..\daprtemplate\DaprMicroserviceTemplate1\DaprMicroserviceTemplate1.csproj", "{5FB40A3E-B859-4232-B2D2-52AE903C53C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprMicroserviceTemplate1", "DaprMicroserviceTemplate1\DaprMicroserviceTemplate1.csproj", "{5FB40A3E-B859-4232-B2D2-52AE903C53C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

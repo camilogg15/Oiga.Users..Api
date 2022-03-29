@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="log4net.Development.config" />
+    <_ContentIncludedByDefault Remove="log4net.Production.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="log4net.config">
+      <DependentUpon>log4net.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </None>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <PackageReference Include="Gelf4Net.UdpAppender" Version="1.0.0.18" />
+    <PackageReference Include="log4net" Version="2.0.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.5.1" />
+    <PackageReference Include="AutoWrapper.Core" Version="4.3.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="azure-pipelines.tt">
+      <LastGenOutput>azure-pipelines.yml</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="azure-pipelines.yml">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>azure-pipelines.tt</DependentUpon>
+    </None>
+    <None Update="deploy\deploy.tt">
+      <LastGenOutput>deploy.yaml</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="deploy\deploy.yaml">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>deploy.tt</DependentUpon>
+    </None>
+    <None Update="log4net.tt">
+      <LastGenOutput>log4net.config</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
